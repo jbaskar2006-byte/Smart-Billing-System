@@ -458,7 +458,7 @@
   }
 
   .brand-name {
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
 
   .brand-tag {
@@ -497,34 +497,44 @@
   }
 
   .page-container {
-    padding: 0.75rem;
+    padding: 0.5rem;
   }
 
   .pos-container {
-    grid-template-columns: 1fr;
-    height: auto;
-    gap: 1rem;
+    grid-template-columns: 1fr !important;
+    height: auto !important;
+    gap: 0.85rem !important;
   }
 
   .products-grid {
-    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-    gap: 0.75rem;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.65rem !important;
   }
 
   .large-food-card {
-    padding: 0.85rem 0.6rem;
+    padding: 0.75rem 0.5rem !important;
+    border-radius: 12px !important;
+  }
+
+  .food-card-img-wrapper {
+    height: 90px !important;
   }
 
   .food-name {
-    font-size: 0.95rem;
+    font-size: 0.9rem !important;
   }
 
   .food-price {
-    font-size: 1.05rem;
+    font-size: 1rem !important;
   }
 
   .cart-panel {
-    border-radius: 14px;
-    margin-top: 0.5rem;
+    border-radius: 14px !important;
+    margin-top: 0.5rem !important;
+  }
+
+  .order-summary-item {
+    padding: 0.5rem !important;
+    gap: 0.5rem !important;
   }
 }

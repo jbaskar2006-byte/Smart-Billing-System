@@ -170,7 +170,7 @@ export default function BillingPage({ cart, setCart, setOrderDetails, setCurrent
                   )}
 
                   {getFoodImage(item.name) ? (
-                    <div style={{ width: '100%', height: '115px', overflow: 'hidden', borderRadius: '10px', marginBottom: '0.5rem', background: '#f8fafc' }}>
+                    <div className="food-card-img-wrapper" style={{ width: '100%', height: '115px', overflow: 'hidden', borderRadius: '10px', marginBottom: '0.5rem', background: '#f8fafc' }}>
                       <img
                         src={getFoodImage(item.name)}
                         alt={item.name}
