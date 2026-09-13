@@ -42,7 +42,7 @@ export default function Sidebar({ adminUser, onLogout, currentOrder }) {
     <aside className="sidebar">
       {adminUser ? (
         <>
-          <div style={{ padding: '0 1.25rem 0.5rem', fontSize: '0.75rem', fontWeight: 800, color: '#f97316', textTransform: 'uppercase', letterSpacing: '0.05em', display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
+          <div className="sidebar-header-label" style={{ padding: '0 1.25rem 0.5rem', fontSize: '0.75rem', fontWeight: 800, color: '#f97316', textTransform: 'uppercase', letterSpacing: '0.05em', display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
             <span>🔒 Admin Panel</span>
           </div>
 
@@ -72,7 +72,7 @@ export default function Sidebar({ adminUser, onLogout, currentOrder }) {
         </>
       ) : (
         <>
-          <div style={{ padding: '0 1.25rem 0.5rem', fontSize: '0.75rem', fontWeight: 800, color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+          <div className="sidebar-header-label" style={{ padding: '0 1.25rem 0.5rem', fontSize: '0.75rem', fontWeight: 800, color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
             Customer Counter
           </div>
 
