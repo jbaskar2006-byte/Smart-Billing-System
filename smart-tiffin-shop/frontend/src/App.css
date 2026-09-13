@@ -397,17 +397,37 @@
   cursor: not-allowed;
 }
 
-/* RESPONSIVE LAYOUT (Mobile vs Laptop) */
-@media (max-width: 900px) {
+/* ==========================================================================
+   MOBILE & LAPTOP RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+
+/* Laptops & Desktop Screens (>= 1024px) */
+@media (min-width: 1024px) {
   .pos-container {
-    grid-template-columns: 1fr;
-    height: auto;
+    grid-template-columns: 1fr 420px;
+    height: calc(100vh - 90px);
   }
 
   .sidebar {
-    width: 60px;
+    width: 240px;
   }
-  
+
+  .products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  }
+}
+
+/* Tablets & Small Laptops (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .pos-container {
+    grid-template-columns: 1fr 340px;
+    height: calc(100vh - 90px);
+  }
+
+  .sidebar {
+    width: 75px;
+  }
+
   .sidebar-link span {
     display: none;
   }
@@ -419,16 +439,88 @@
   .products-grid {
     grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
   }
+}
 
-  .food-emoji {
-    font-size: 2.5rem;
+/* Mobile Screens (< 768px) */
+@media (max-width: 767px) {
+  .app-container {
+    min-height: 100vh;
   }
 
-  .food-name {
+  .main-content {
+    flex-direction: column;
+  }
+
+  .navbar {
+    padding: 0.65rem 0.85rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .brand-name {
     font-size: 1rem;
   }
 
+  .brand-tag {
+    display: none;
+  }
+
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0.4rem 0;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 57px;
+    z-index: 90;
+    background: #ffffff;
+  }
+
+  .sidebar-link {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.8rem;
+    border-left: none;
+    border-bottom: 2px solid transparent;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .sidebar-link.active {
+    border-left-color: transparent;
+    border-bottom-color: var(--primary);
+  }
+
+  .page-container {
+    padding: 0.75rem;
+  }
+
+  .pos-container {
+    grid-template-columns: 1fr;
+    height: auto;
+    gap: 1rem;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 0.75rem;
+  }
+
+  .large-food-card {
+    padding: 0.85rem 0.6rem;
+  }
+
+  .food-name {
+    font-size: 0.95rem;
+  }
+
   .food-price {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
+  }
+
+  .cart-panel {
+    border-radius: 14px;
+    margin-top: 0.5rem;
   }
 }
