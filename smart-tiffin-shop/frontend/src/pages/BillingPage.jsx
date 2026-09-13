@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getProducts, createOrder } from '../services/api';
-import { getFoodImage } from '../utils/productImages';
+import { getFoodImage, getRawFallbackImage } from '../utils/productImages';
 import { Plus, Minus, Trash2, ArrowRight, ShoppingCart, RefreshCw, XCircle } from 'lucide-react';
 
 const DEFAULT_ITEMS_WITH_EMOJIS = [
@@ -175,6 +175,12 @@ export default function BillingPage({ cart, setCart, setOrderDetails, setCurrent
                         src={getFoodImage(item.name)}
                         alt={item.name}
                         style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                        onError={(e) => {
+                          const fallback = getRawFallbackImage(item.name);
+                          if (fallback && e.target.src !== fallback) {
+                            e.target.src = fallback;
+                          }
+                        }}
                       />
                     </div>
                   ) : (

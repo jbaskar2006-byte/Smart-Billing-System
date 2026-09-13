@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getProducts, createProduct, updateProduct, deleteProduct } from '../services/api';
-import { getFoodImage } from '../utils/productImages';
+import { getFoodImage, getRawFallbackImage } from '../utils/productImages';
 import { Plus, Edit2, Trash2, CheckCircle, XCircle, Search, AlertCircle, Save } from 'lucide-react';
 
 export default function ProductManagementPage() {
@@ -271,6 +271,12 @@ export default function ProductManagementPage() {
                       src={getFoodImage(item.name)}
                       alt={item.name}
                       style={{ width: '36px', height: '36px', borderRadius: '8px', objectFit: 'cover', border: '1px solid #e2e8f0' }}
+                      onError={(e) => {
+                        const fallback = getRawFallbackImage(item.name);
+                        if (fallback && e.target.src !== fallback) {
+                          e.target.src = fallback;
+                        }
+                      }}
                     />
                   )}
                   <span>{item.name}</span>
